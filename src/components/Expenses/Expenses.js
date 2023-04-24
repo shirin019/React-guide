@@ -5,6 +5,7 @@ import Card from '../UI/Card.js'
 import ExpensesFilter from './ExpenseFilter.js';
 
 
+
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState('2020');//fileterdYear is string
 
@@ -25,6 +26,7 @@ function Expenses(props) {
       amount={expense.amount}
       date={expense.date}></ExpenseItem>)
   )
+
   }
 
   return (
