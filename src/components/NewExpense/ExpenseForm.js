@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './ExpenseForm.css';
 
 const ExpenseForm = (props)=>{
+    
     const[enteredTitle,setEnteredTitle] = useState('');//'' since intially blank
     const[enteredAmount, setEnteredAmount] = useState('');// for onChange the value is always a string, even th num and date is as string 
     const[enteredDate, setEnteredDate] = useState(''); //can be multiple state and act independently
@@ -45,7 +46,7 @@ const ExpenseForm = (props)=>{
         
         const expenseData ={
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
         
@@ -74,6 +75,7 @@ const ExpenseForm = (props)=>{
     </div>
     </div>
     <div className="new-expense__actions">
+      <button type="button" onClick={props.onCancel}>Cancel</button>
       <button type="submit">Add Expense</button>
     </div>
    </form>)
